@@ -10,7 +10,7 @@ hear = sr.Recognizer()
 
 mic = sr.Microphone(device_index=1)
 
-url = 'http://api.openweathermap.org/data/2.5/weather?q=Ottawa&appid=afd36b72a1089a148c582bc930a4267d&units=metric'
+url = 'http://api.openweathermap.org/data/2.5/weather?q={YourCity}&appid={YourAPIKey}&units=metric'
 obtain = requests.get(url)
 data = obtain.json()
 temp =  data['main']['temp']
