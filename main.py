@@ -1,3 +1,4 @@
+########## Moduels ##########
 import speech_recognition as sr
 import pyaudio
 import time
@@ -6,30 +7,21 @@ import json
 import webbrowser
 import pyttsx3
 
+########## Variables ##########
+engine = pyttsx3.init()
 hear = sr.Recognizer()
-#print(sr.Microphone.list_microphone_names())
-
 mic = sr.Microphone(device_index=1)
 
+########## Weather API ##########
 url = 'http://api.openweathermap.org/data/2.5/weather?q={YourCity}&appid={YourAPIKey}&units=metric'
 obtain = requests.get(url)
 data = obtain.json()
 temp =  data['main']['temp']
 
-
-hear = sr.Recognizer()
-#print(sr.Microphone.list_microphone_names())
-
-mic = sr.Microphone(device_index=1)
-
-
-engine = pyttsx3.init()
-
-
+########## Base Code ##########
 while True:
     with mic as source:
         audio = hear.listen(source)
-        
         text = hear.recognize_google(audio)
             
         if(text) == "hello":
