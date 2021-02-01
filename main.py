@@ -15,13 +15,6 @@ obtain = requests.get(url)
 data = obtain.json()
 temp =  data['main']['temp']
 
-import speech_recognition as sr
-import pyaudio
-import time
-import requests
-import json
-import webbrowser
-import pyttsx3
 
 hear = sr.Recognizer()
 #print(sr.Microphone.list_microphone_names())
